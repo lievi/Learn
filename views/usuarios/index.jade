@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+	h1 Usuários
+	br
+	br
+	a(href="/usuarios/create" title="Criar novo usuário") Criar novo usuário
+	br
+	if messages.info
+		div(class="alert alert-dismissible alert-success")
+			p= messages.info
+	br
+	table(class="table well")
+		thead
+			tr
+				th ID:
+				th Nome:
+				th Login:
+				th Senha:
+				th Data:
+				th Acões:
+		tbody
+			each item, i in lista
+				tr 
+					td #{item._id}
+					td #{item.nome}
+					td #{item.login}
+					td #{item.senha}
+					td #{item.data_cad}
+					td
+						a(href="/usuarios/show/#{item._id}", class="btn btn-default") Ver
+						&nbsp
+						a(href="/usuarios/edit/#{item._id}", class="btn btn-info") Editar
+	

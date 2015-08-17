@@ -1,0 +1,31 @@
+doctype html
+html(lang="pt-BR")
+	head
+		title= title
+		script(src="http://code.angularjs.org/1.2.6/angular.js")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		script(src="/javascript/validation.js")
+body(ng-app="validationApp" ng-controller="mainController")
+	br
+	br
+	br
+	div(class="navbar navbar-inverse navbar-fixed-top")
+		div(class="container")
+			div(class="navbar-deader")
+				a(href="/" class="navbar-brand") Learn()
+			div(class="navbar-collapse collapse" id="navbar-main")
+				ul(class="nav navbar-nav")
+					li(class="dropdown")
+						a(href="/usuarios") Usuários
+					li
+						a(href="/") Teste
+					li
+						a(href="/sobre") Sobre
+	div(class="container")
+		block content		
+		footer
+			div(class="container")
+				h6 @ Desenvolvido por uma Batata - Todos os direitos reservados
+
+

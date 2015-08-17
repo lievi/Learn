@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+	div(class="well bs-compenent")
+		if errors
+				div(class="alert alert-dismissible alert-danger")
+					ul
+						each error in errors
+							li= error.msg
+		form(class="form-horizontal" method="POST", action="/usuarios", name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate)
+			fieldset
+				legend Cadastro
+				div(class="form-group")						
+					div(class="col-lg-10" ng-class="{ 'has-error' : userForm.nome.$invalid && userForm.nome.$dirty }")
+						label(for="nome" class="control-label") Nome (Obrigatorio)
+						input(type="text" name="nome" class="form-control" placeholder="Nome" ng-model="name" required)
+						br				
+					div(class="col-lg-10" ng-class="{ 'has-error' : userForm.login.$invalid && userForm.login.$dirty }")
+						label(for="login" class="control-label") Login (Obrigatorio - Minímo de 3 caracteres)
+						input(type="text" name="login"  class="form-control" placeholder="Login" ng-model="user.username" ng-minlength="3" required)
+						br				
+					div(class="col-lg-10" ng-class="{ 'has-error' : userForm.senha.$invalid && userForm.senha.$dirty }")
+						label(for="senha" class="control-label") Senha (Obrigatorio - Minímo de 3 caracteres)
+						input(type="password" name="senha"  class="form-control" placeholder="Senha" ng-model="text" ng-minlength="3" required)
+						br
+						br
+				div(class="form-group")
+					button(type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid") Cadastrar
+					&nbsp
+					&nbsp
+					a(href="/usuarios"  class="btn btn-default" ) voltar
+
+			

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	h1= valor.nome
+	h4 ID
+	p= valor._id
+	h4 Login
+	p= valor.login
+	h4 Data de cadastro
+	p= valor.data_cad
+	br
+	br
+	a(href="/usuarios" title="Voltar") Voltar
