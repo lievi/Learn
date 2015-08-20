@@ -1,4 +1,12 @@
 extends ../layout
 
 block content
-	include ../principal
+	include ../principal	
+			each item, i in lista
+				tr #{item._id}
+				tr #{item.nome}
+				tr #{item.login}
+				tr #{item.senha}
+				tr #{item.data_cad}
+		
+	
