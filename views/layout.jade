@@ -18,6 +18,11 @@ body(ng-app="validationApp" ng-controller="mainController")
 		div(class="container")
 			div(class="navbar-deader")
 				a(href="/" class="navbar-brand") Learn()
+			button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false" aria-controls="navbar")
+				span(class="sr-only") Toggle navigation
+				span(class="icon-bar")
+				span(class="icon-bar")
+				span(class="icon-bar")
 			div(class="navbar-collapse collapse" id="navbar-main")
 				ul(class="nav navbar-nav")
 					li(class="dropdown")
@@ -26,6 +31,8 @@ body(ng-app="validationApp" ng-controller="mainController")
 						a(href="/") Teste
 					li
 						a(href="/sobre") Sobre
+
+
 block vertical									
 	block content		
 	footer

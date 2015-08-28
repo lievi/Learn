@@ -11,35 +11,25 @@ block vertical
 									span(class="icon-bar")
 									span(class="icon-bar")
 									span(class="icon-bar")
-								span(class="visible-xs navbar-brand") Sidebar menu
+								span(class="visible-xs navbar-brand") Linguagens
 							div(class="navbar-collapse collapse sidebar-navbar-collapse")
 								ul(class="nav navbar-nav")
 									li(class="active")
-										each item, i in lista
-											a(href="#") #{item.nome}
-									li
-										a(href="#") Menu Item 2
-									li(class="dropdown")
-										a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") DropDown
-											span(class="caret")
-										ul(class="dropdown-menu")
-											li
-												a(href="#") Action
-											li
-												a(href="#") Action 2
-											li
-												a(href="#") Action 3
-											li(class="divider")
-											li(class="dropdown-header") Nav Here
-											li
-												a(href="#") Separated link
-												a(href="#") Separated link 2
-									li
-										a(href="#") Menu Item 4
-									li
-										a(href="#") Reviews
-											span(class="badge") 1,118
+										a Linguagens
+									each item, i in lista
+										li
+											a(href="#") #{item.linguagem}
 				div(class="col-sm-9")
 						include ../principal
-		
+						each item, i in lista
+							table(class="table well")
+								thead
+									tr
+										td Pergunta: #{item.pergunta}
+									tr
+										td Nome: Ainda não funcionando
+									tr
+										td Linguagem: #{item.linguagem}
+									tr
+										td Data: #{moment(item.data_perg).format('LLL')}
 	
