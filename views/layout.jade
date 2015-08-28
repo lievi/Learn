@@ -1,7 +1,8 @@
 doctype html
 html(lang="pt-BR")
-	head
+	head		
 		title= title
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
 		script(src="http://code.angularjs.org/1.2.6/angular.js")
 		script(src="/javascript/validation.js")
@@ -25,47 +26,10 @@ body(ng-app="validationApp" ng-controller="mainController")
 						a(href="/") Teste
 					li
 						a(href="/sobre") Sobre
-	div(class="row")
-		div(class="col-sm-3")
-			div(class="sidebar-nav")
-				div(class="navbar navbar-default" role="navigation")
-					div(class="navbar-header")
-						button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse")
-							span(class="sr-only") Toggle navigation
-							span(class="icon-bar")
-							span(class="icon-bar")
-							span(class="icon-bar")
-						span(class="visible-xs navbar-brand") Sidebar menu
-					div(class="navbar-collapse collapse sidebar-navbar-collapse")
-						ul(class="nav navbar-nav")
-							li(class="active")
-								a(href="#") Menu Item 1
-							li
-								a(href="#") Menu Item 2
-							li(class="dropdown")
-								a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") DropDown
-									span(class="caret")
-								ul(class="dropdown-menu")
-									li
-										a(href="#") Action
-									li
-										a(href="#") Action 2
-									li
-										a(href="#") Action 3
-									li(class="divider")
-									li(class="dropdown-header") Nav Here
-									li
-										a(href="#") Separated link
-										a(href="#") Separated link 2
-							li
-								a(href="#") Menu Item 4
-							li
-								a(href="#") Reviews
-									span(class="badge") 1,118										
+block vertical									
+	block content		
+	footer
 		div(class="container")
-			block content		
-			footer
-				div(class="container")
-					h6 @ Desenvolvido por uma Batata - Todos os direitos reservados
+			h6 @ Desenvolvido por uma Batata - Todos os direitos reservados
 
 

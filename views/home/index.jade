@@ -1,12 +1,45 @@
 extends ../layout
 
-block content
-	include ../principal	
-			each item, i in lista
-				tr #{item._id}
-				tr #{item.nome}
-				tr #{item.login}
-				tr #{item.senha}
-				tr #{item.data_cad}
+block vertical
+		div(class="row")
+				div(class="col-sm-3")
+					div(class="sidebar-nav")
+						div(class="navbar navbar-default" role="navigation")
+							div(class="navbar-header")
+								button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse")
+									span(class="sr-only") Toggle navigation
+									span(class="icon-bar")
+									span(class="icon-bar")
+									span(class="icon-bar")
+								span(class="visible-xs navbar-brand") Sidebar menu
+							div(class="navbar-collapse collapse sidebar-navbar-collapse")
+								ul(class="nav navbar-nav")
+									li(class="active")
+										each item, i in lista
+											a(href="#") #{item.nome}
+									li
+										a(href="#") Menu Item 2
+									li(class="dropdown")
+										a(href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false") DropDown
+											span(class="caret")
+										ul(class="dropdown-menu")
+											li
+												a(href="#") Action
+											li
+												a(href="#") Action 2
+											li
+												a(href="#") Action 3
+											li(class="divider")
+											li(class="dropdown-header") Nav Here
+											li
+												a(href="#") Separated link
+												a(href="#") Separated link 2
+									li
+										a(href="#") Menu Item 4
+									li
+										a(href="#") Reviews
+											span(class="badge") 1,118
+				div(class="col-sm-9")
+						include ../principal
 		
 	
