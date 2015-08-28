@@ -67,7 +67,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
-
+//Fim do Teste de Implementação com o Twitter
 
 
 //Conexão ao banco

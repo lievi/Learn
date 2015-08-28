@@ -1,11 +1,15 @@
 doctype html
 html(lang="pt-BR")
-	head
+	head		
 		title= title
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
 		script(src="http://code.angularjs.org/1.2.6/angular.js")
+		script(src="/javascript/validation.js")
+		script(src="/bootstrap/js/bootstrap.min.js")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
-		script(src="/javascript/validation.js")
+
 body(ng-app="validationApp" ng-controller="mainController")
 	br
 	br
@@ -14,6 +18,11 @@ body(ng-app="validationApp" ng-controller="mainController")
 		div(class="container")
 			div(class="navbar-deader")
 				a(href="/" class="navbar-brand") Learn()
+			button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false" aria-controls="navbar")
+				span(class="sr-only") Toggle navigation
+				span(class="icon-bar")
+				span(class="icon-bar")
+				span(class="icon-bar")
 			div(class="navbar-collapse collapse" id="navbar-main")
 				ul(class="nav navbar-nav")
 					li(class="dropdown")
@@ -22,10 +31,12 @@ body(ng-app="validationApp" ng-controller="mainController")
 						a(href="/") Teste
 					li
 						a(href="/sobre") Sobre
-	div(class="container")
-		block content		
-		footer
-			div(class="container")
-				h6 @ Desenvolvido por uma Batata - Todos os direitos reservados
+
+
+block vertical									
+	block content		
+	footer
+		div(class="container")
+			h6 @ Desenvolvido por uma Batata - Todos os direitos reservados
 
 

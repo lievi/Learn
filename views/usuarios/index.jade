@@ -21,12 +21,12 @@ block content
 				th Acões:
 		tbody
 			each item, i in lista
-				tr 
+				tr
 					td #{item._id}
 					td #{item.nome}
 					td #{item.login}
 					td #{item.senha}
-					td #{item.data_cad}
+					td #{moment(item.data_cad).format('LLL')}
 					td
 						a(href="/usuarios/show/#{item._id}", class="btn btn-default") Ver
 						&nbsp
