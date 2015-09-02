@@ -3,5 +3,6 @@ module.exports = function(app){
 	var perguntas = app.controllers.perguntas;
 
 	app.get('/',home.index);
-	app.get('/testeAdd',perguntas.insert);
+	app.post('/Add',perguntas.insert);
+	app.get('/:ling', home.index);
 }

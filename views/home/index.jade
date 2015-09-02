@@ -18,9 +18,23 @@ block vertical
 										a Linguagens
 									each item, i in lista
 										li
-											a(href="#") #{item.linguagem}
+											a(href="#{item.linguagem}") #{item.linguagem}
 				div(class="col-sm-9")
 						include ../principal
+						form(class="form-horizontal" method="POST", action="/Add", name="userForm")
+							fieldset
+								div(class="form-group")
+									div(class="col-lg-10")
+										label(for="pergunta" class="control-label")
+										textarea(class="form-control" rows="5" id="pergunta" name="pergunta" placeholder="Pergunta" required)
+										br
+										select
+											each item,i in lista
+												option(name="#{item.linguagem}" value="#{item.linguagem}") #{item.linguagem}	
+										br
+										button(type="submit" class="btn btn-primary") Perguntar
+										br
+										br
 						each item, i in lista
 							table(class="table well")
 								thead
