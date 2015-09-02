@@ -28,9 +28,9 @@ block vertical
 										label(for="pergunta" class="control-label")
 										textarea(class="form-control" rows="5" id="pergunta" name="pergunta" placeholder="Pergunta" required)
 										br
-										select
+										select(name="linguagem" )
 											each item,i in lista
-												option(name="#{item.linguagem}" value="#{item.linguagem}") #{item.linguagem}	
+												option(value="#{item.linguagem}") #{item.linguagem}	
 										br
 										button(type="submit" class="btn btn-primary") Perguntar
 										br
