@@ -16,7 +16,7 @@ block vertical
 								ul(class="nav navbar-nav")
 									li(class="active")
 										a Linguagens
-									each item, i in lista
+									each item, i in linguagens
 										li
 											a(href="#{item.linguagem}") #{item.linguagem}
 				div(class="col-sm-9")
@@ -28,14 +28,15 @@ block vertical
 										label(for="pergunta" class="control-label")
 										textarea(class="form-control" rows="5" id="pergunta" name="pergunta" placeholder="Pergunta" required)
 										br
-										select(name="linguagem" )
-											each item,i in lista
+										select(name="linguagem" class="form-control")
+											each item,i in linguagens
 												option(value="#{item.linguagem}") #{item.linguagem}	
 										br
 										button(type="submit" class="btn btn-primary") Perguntar
 										br
 										br
-						each item, i in lista
+										
+						each item, i in perguntas
 							table(class="table well")
 								thead
 									tr
