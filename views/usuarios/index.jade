@@ -10,25 +10,33 @@ block content
 		div(class="alert alert-dismissible alert-success")
 			p= messages.info
 	br
-	table(class="table well")
-		thead
-			tr
-				th ID:
-				th Nome:
-				th Login:
-				th Senha:
-				th Data:
-				th Acões:
-		tbody
-			each item, i in lista
-				tr
-					td #{item._id}
-					td #{item.nome}
-					td #{item.login}
-					td #{item.senha}
-					td #{moment(item.data_cad).format('LLL')}
-					td
-						a(href="/usuarios/show/#{item._id}", class="btn btn-default") Ver
-						&nbsp
-						a(href="/usuarios/edit/#{item._id}", class="btn btn-info") Editar
+	br
+	each item, i in lista
+		table(class="table well")
+			tbody			
+					tr
+						th ID:
+						td #{item._id}
+					tr
+						th Nome:
+						td #{item.nome}
+					tr
+						th login:
+						td #{item.login}
+					tr
+						th Senha:
+						td #{item.senha}
+					tr
+						th Data Cad:
+						td #{moment(item.data_cad).format('LLL')}
+					tr
+						th Funçoes
+						td
+							a(href="/usuarios/show/#{item._id}", class="btn btn-default") Ver
+							&nbsp
+							a(href="/usuarios/edit/#{item._id}", class="btn btn-info") Editar
+		br
+		br
+						
+
 	
