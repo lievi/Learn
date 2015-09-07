@@ -4,5 +4,5 @@ module.exports = function(app){
 
 	app.get('/',home.index);
 	app.post('/Add',perguntas.insert);
-	app.get('/:ling', home.index);
+	app.get('/ling/:ling', home.index);
 }

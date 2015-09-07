@@ -1,6 +1,6 @@
 extends ../layout
 
-block vertical
+block content
 		div(class="row")
 				div(class="col-sm-3")
 					div(class="sidebar-nav")
@@ -18,7 +18,7 @@ block vertical
 										a Linguagens
 									each item, i in linguagens
 										li
-											a(href="#{item.linguagem}") #{item.linguagem}
+											a(href="/ling/#{item.linguagem}") #{item.linguagem}
 				div(class="col-sm-9")
 						include ../principal
 						form(class="form-horizontal" method="POST", action="/Add", name="userForm")
