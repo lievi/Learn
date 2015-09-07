@@ -1,4 +1,51 @@
 extends ../layout
 
 block content
-	include ../principal
+		div(class="row")
+				div(class="col-sm-3")
+					div(class="sidebar-nav")
+						div(class="navbar navbar-default" role="navigation")
+							div(class="navbar-header")
+								button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse")
+									span(class="sr-only") Toggle navigation
+									span(class="icon-bar")
+									span(class="icon-bar")
+									span(class="icon-bar")
+								span(class="visible-xs navbar-brand") Linguagens
+							div(class="navbar-collapse collapse sidebar-navbar-collapse")
+								ul(class="nav navbar-nav")
+									li(class="active")
+										a Linguagens
+									each item, i in linguagens
+										li
+											a(href="/ling/#{item.linguagem}") #{item.linguagem}
+				div(class="col-sm-9")
+						include ../principal
+						form(class="form-horizontal" method="POST", action="/Add", name="userForm")
+							fieldset
+								div(class="form-group")
+									div(class="col-lg-10")
+										label(for="pergunta" class="control-label")
+										textarea(class="form-control" rows="5" id="pergunta" name="pergunta" placeholder="Pergunta" required)
+										br
+										select(name="linguagem" class="form-control")
+											each item,i in linguagens
+												option(value="#{item.linguagem}") #{item.linguagem}	
+										br
+										button(type="submit" class="btn btn-primary") Perguntar
+										br
+										br
+										
+						h1 Perguntas	
+						each item, i in perguntas
+							table(class="table well")
+								thead
+									tr
+										td Pergunta: #{item.pergunta}
+									tr
+										td Nome: Ainda não funcionando
+									tr
+										td Linguagem: #{item.linguagem}
+									tr
+										td Data: #{moment(item.data_perg).format('LLL')}
+	
