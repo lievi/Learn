@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+	table(class="table well")
+		thead
+			tr
+				td #{pergunta.pergunta}
+			tr
+				td Nome: Ainda não funcionando
+			tr
+				td Linguagem: #{pergunta.linguagem}
+			tr
+				td Data: #{moment(pergunta.data_perg).format('LLL')}
+	h2 Responder:
+	form(class="form-horizontal" method="POST", action="/resposta/add", name="userForm")
+							fieldset
+								div(class="form-group")
+									div(class="col-lg-10")
+										input(type="text" name="idPerg" style="visibility:hidden" value="#{pergunta._id}")
+										textarea(class="form-control" rows="4" id="resposta" name="resposta" placeholder="Digite sua resposta" required)
+										br
+										button(type="submit" class="btn btn-primary") Responder
+										br
+										br
+
+	each item, i in respostas
+		table(class="table well" style="margin-left:5%" )
+			thead
+				tr
+					td #{item.resposta}
+				tr
+					td Nome: Ainda não funcionando
+				tr
+					td Data: #{moment(item.data_resp).format('LLL')}
+	
+
+		

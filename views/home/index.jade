@@ -30,7 +30,7 @@ block content
 										br
 										select(name="linguagem" class="form-control")
 											each item,i in linguagens
-												option(value="#{item.linguagem}") #{item.linguagem}	
+												option(value="#{item.linguagem}") #{item.linguagem}
 										br
 										button(type="submit" class="btn btn-primary") Perguntar
 										br
@@ -41,11 +41,14 @@ block content
 							table(class="table well")
 								thead
 									tr
-										td Pergunta: #{item.pergunta}
+										td #{item.pergunta}
 									tr
 										td Nome: Ainda não funcionando
 									tr
 										td Linguagem: #{item.linguagem}
 									tr
 										td Data: #{moment(item.data_perg).format('LLL')}
+									tr
+										td
+											a(href="/pergunta/#{item._id}") Responder
 	

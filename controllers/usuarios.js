@@ -24,7 +24,7 @@ module.exports = function(app){
 
 			model.save(function(err,data){
 				if(err){
-					console.log('Erro ao salvar '+erro);
+					console.log('Erro ao salvar '+err);
 				}else{
 					res.json(data);
 				}
