@@ -22,7 +22,9 @@ var app = express();
 
 
 
-
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
 //Teste implementação de login com Twitter com Passport
  var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
  var passport = require('passport');
@@ -111,8 +113,8 @@ if ('development' == app.get('env')) {
 load('models').then('controllers').then('routes').into(app);
 
 //alterado
-app.listen(3000, function(){
-  console.log('Servidor rodando na porta 3000...');
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
 
 

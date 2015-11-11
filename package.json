@@ -2,24 +2,26 @@
   "name": "waibtec",
   "version": "0.0.1",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
-    "express-load": "*",
+    "connect-ensure-login": "*",
+    "cookie-parser": "*",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "express-flash": "*",
+    "express-load": "*",
+    "express-session": "*",
     "jade": "~1.11.0",
+    "moment": "*",
+    "mongoose": "*",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0",
-    "mongoose":"*",
-    "express-flash":"*",
-    "express-session":"*",
-    "cookie-parser":"*",
-    "moment":"*",
-    "passport":"*",
-    "passport-twitter":"*",
-    "connect-ensure-login":"*"
+    "package.json": "0.0.0",
+    "passport": "*",
+    "passport-twitter": "*",
+    "serve-favicon": "~2.3.0"
   }
 }
