@@ -71,14 +71,33 @@ passport.deserializeUser(function(obj, done) {
 
 
 //Conexão ao banco
-var mongoose = require('mongoose');	
-mongoose.connect('mongodb://localhost/learn', function(err){
-	if(err){
-		console.err('Erro na conexão com o banco: '+ err);
-	}else{
-		console.log('Servidor conectado');
-	}
+//var mongoose = require('mongoose');	
+//mongoose.connect('mongodb://localhost/learn', function(err){
+//	if(err){
+//		console.err('Erro na conexão com o banco: '+ err);
+//	}else{
+//		console.log('Servidor conectado');
+//	}
+//});
+
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+    url = process.env.OPENSHIFT_MONGODB_DB_URL +
+    process.env.OPENSHIFT_APP_NAME;
+}
+
+// Connect to mongodb
+var connect = function () {
+    mongoose.connect(url);
+};
+connect();
+
+var db = mongoose.connection;
+
+db.on('error', function(error){
+    console.log("Error loading the db - "+ error);
 });
+
+db.on('disconnected', connect);
 
 
 
@@ -111,8 +130,11 @@ if ('development' == app.get('env')) {
 load('models').then('controllers').then('routes').into(app);
 
 //alterado
-app.listen(3000, function(){
-  console.log('Servidor rodando na porta 3000...');
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+app.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
 
 

@@ -2,6 +2,7 @@
   "name": "waibtec",
   "version": "0.0.1",
   "private": true,
+  "main":"app.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -21,5 +22,6 @@
     "passport":"*",
     "passport-twitter":"*",
     "connect-ensure-login":"*"
-  }
+  },
+
 }
